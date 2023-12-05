@@ -85,7 +85,12 @@ const loginUser = asyncHandler( async ( req, res ) =>
 // @access Private
 const getMe = asyncHandler( async ( req, res ) =>
 {
-    res.send( 'me' );
+    const user = {
+        id: req.user._id,
+        email: req.user.email,
+        name: req.user.name,
+    };
+    res.status( 200 ).json( user );
 } );
 
 // Generate token
