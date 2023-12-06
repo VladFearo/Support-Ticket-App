@@ -8,7 +8,7 @@ function Login() {
     password: "",
   });
 
-  const { name, email, password, password2 } = formData;
+  const { email, password } = formData;
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -19,10 +19,6 @@ function Login() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    if (password !== password2) {
-      toast.error("Passwords do not match");
-    }
   };
 
   return (
